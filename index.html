@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avisa que llegué — Seguridad para mujeres que viajan solas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">Avisa que llegué</div>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#por-que">¿Por qué?</a></li>
+      <li><a href="#defensa">Defensa</a></li>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#cuidarse">Cuidarse</a></li>
+      <li><a href="#emergencias">Emergencias</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#" id="navPerfilBtn" style="color:var(--fuchsia);font-weight:700;">👤 Mi perfil</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Seguridad para mujeres que viajan solas</span>
+      <h1 class="hero-title">Viajar sola,<br /><em>llegar bien.</em></h1>
+      <p class="hero-sub">Información, herramientas y consejos prácticos para que cada viaje sea tuyo — sin miedo, con comunidad.</p>
+      <a href="#por-que" class="btn-primary">Explorar la guía</a>
+    </div>
+    <div class="ticker-wrap">
+      <div class="ticker-track" id="ticker">
+        <span class="ticker-item">Compartí tu ubicación en tiempo real con alguien de confianza</span>
+        <span class="ticker-item">Llevá siempre batería externa de respaldo</span>
+        <span class="ticker-item">Memorizá los números de emergencia del lugar</span>
+        <span class="ticker-item">Evitá mostrar objetos de valor en lugares concurridos</span>
+        <span class="ticker-item">Activá las opciones de seguridad en las apps de transporte</span>
+        <span class="ticker-item">Si algo no se siente bien, alejate. Tu intuición sabe</span>
+        <span class="ticker-item">Conocé dos rutas alternativas a tu alojamiento</span>
+        <span class="ticker-item">Informate sobre zonas de riesgo antes de llegar</span>
+        <span class="ticker-item">Compartí tu ubicación en tiempo real con alguien de confianza</span>
+        <span class="ticker-item">Llevá siempre batería externa de respaldo</span>
+        <span class="ticker-item">Memorizá los números de emergencia del lugar</span>
+        <span class="ticker-item">Evitá mostrar objetos de valor en lugares concurridos</span>
+        <span class="ticker-item">Activá las opciones de seguridad en las apps de transporte</span>
+        <span class="ticker-item">Si algo no se siente bien, alejate. Tu intuición sabe</span>
+        <span class="ticker-item">Conocé dos rutas alternativas a tu alojamiento</span>
+        <span class="ticker-item">Informate sobre zonas de riesgo antes de llegar</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- POR QUÉ -->
+  <section class="section" id="por-que">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <span class="section-label">Por qué importa</span>
+          <h2 class="section-title">La seguridad no es paranoia.<br />Es preparación.</h2>
+          <p>Viajar sola es una experiencia transformadora, pero también expone a riesgos únicos que, con la información correcta, se pueden anticipar y reducir.</p>
+          <p>Conocer técnicas de defensa personal, usar las herramientas tecnológicas adecuadas y estar preparada ante una emergencia puede marcar la diferencia.</p>
+          <p>Esta guía nació para acompañarte: sin alarmismo, con datos reales y recursos concretos.</p>
+        </div>
+        <div class="stats-col">
+          <div class="stat-card">
+            <span class="stat-num">+60%</span>
+            <p>de viajeras solas reportan haber sentido inseguridad en algún momento de su viaje.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3 de 4</span>
+            <p>incidentes se pudieron prevenir con información y preparación previa.</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">100%</span>
+            <p>de los consejos de esta guía son gratuitos, accesibles y aplicables hoy mismo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEFENSA + HERRAMIENTAS -->
+  <section class="section section-dark" id="defensa">
+    <div class="container">
+      <span class="section-label light">Protección</span>
+      <h2 class="section-title" style="color:var(--white)">Defensa personal y herramientas</h2>
+      <p class="section-intro light">El objetivo no es pelear, sino protegerte y escapar. Elegí la categoría que necesitás.</p>
+      <div class="tabs-wrapper">
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="tecnicas">Técnicas básicas</button>
+          <button class="tab-btn" data-tab="auto">En el auto</button>
+          <button class="tab-btn" data-tab="pie">A pie</button>
+          <button class="tab-btn" data-tab="noche">De noche</button>
+          <button class="tab-btn" data-tab="mochila">En la mochila</button>
+        </div>
+        <div class="tab-panel active" id="tab-tecnicas">
+          <div class="steps-grid">
+            <div class="step-card"><div class="step-num">01</div><h3>Postura de alerta</h3><p>Mantené los pies a la altura de los hombros, rodillas levemente flexionadas. Esta posición da estabilidad y permite reaccionar rápido.</p></div>
+            <div class="step-card"><div class="step-num">02</div><h3>La palmada de escape</h3><p>Si alguien te agarra del brazo, girá el codo hacia adentro en dirección al pulgar del agresor: es el punto más débil de su agarre.</p></div>
+            <div class="step-card"><div class="step-num">03</div><h3>Zona de impacto segura</h3><p>Las zonas más efectivas: empeine del pie, rodilla, entrepierna y nariz. Un golpe firme puede darte los segundos para escapar.</p></div>
+            <div class="step-card"><div class="step-num">04</div><h3>El grito como herramienta</h3><p>Gritar "¡FUEGO!" atrae más atención que "¡Ayuda!". Usá el sonido para alertar a los demás y distraer al agresor.</p></div>
+          </div>
+          <div class="video-link-box">
+            <p>📽️ Recurso recomendado:</p>
+            <a href="https://youtu.be/iGMaIxqcSpU?si=8Q0Tiv4U7eUVlt9n" target="_blank" rel="noopener noreferrer" class="external-link">Aprende Defensa Personal — Krav Maga en español (YouTube) →</a>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-auto">
+          <div class="tools-grid"><div class="tool-card"><h3>🚗 En el auto</h3><ul><li>Martillo rompevidrios con cortador de cinturón.</li><li>Silbato de emergencia en el llavero.</li><li>Cerrojo de volante como medida disuasoria.</li><li>Cargador de batería portátil en la guantera.</li></ul></div></div>
+        </div>
+        <div class="tab-panel" id="tab-pie">
+          <div class="tools-grid"><div class="tool-card"><h3>🚶‍♀️ A pie</h3><ul><li>Llave entre los dedos como extensión del puño.</li><li>Silbato personal de alto decibel.</li><li>Alarma personal de pánico.</li><li>Spray de pimienta (verificá la legalidad en tu país).</li></ul></div></div>
+        </div>
+        <div class="tab-panel" id="tab-noche">
+          <div class="tools-grid"><div class="tool-card"><h3>🌙 De noche</h3><ul><li>Linterna táctica en el llavero o mochila.</li><li>Ropa reflectante para ser visible.</li><li>Evitar auriculares: mantener los sentidos activos.</li><li>App de linterna de emergencia activada con un gesto.</li></ul></div></div>
+        </div>
+        <div class="tab-panel" id="tab-mochila">
+          <div class="tools-grid"><div class="tool-card"><h3>🎒 En la mochila</h3><ul><li>Botiquín básico con vendas, antiséptico y analgésicos.</li><li>Copia de documentos en sobre sellado.</li><li>Efectivo de emergencia en escondite secundario.</li><li>Tarjeta con contactos de emergencia escritos a mano.</li></ul></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section class="section section-tinted" id="apps">
+    <div class="container">
+      <span class="section-label">Apps de viaje</span>
+      <h2 class="section-title">Configurá tus apps para viajar segura</h2>
+      <p class="section-intro">Cómo activar las funciones de seguridad en las principales aplicaciones.</p>
+      <div class="carousel-wrapper">
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="app-card">
+              <div class="app-header"><span class="app-logo uber">U</span><h3>Uber</h3></div>
+              <ul><li><strong>Verificación:</strong> pedí que confirme tu nombre antes de subir.</li><li><strong>Compartir viaje:</strong> usá "Compartir mi viaje" en tiempo real.</li><li><strong>PIN de seguridad:</strong> el conductor ingresa un código antes de iniciar.</li><li><strong>Botón SOS:</strong> conecta con servicios de emergencia.</li></ul>
+              <a href="https://www.uber.com/ar/es/safety/" target="_blank" rel="noopener noreferrer" class="app-link">Ver guía de seguridad →</a>
+            </div>
+            <div class="app-card">
+              <div class="app-header"><span class="app-logo didi">D</span><h3>DiDi</h3></div>
+              <ul><li><strong>Solo mujeres:</strong> activá el filtro de conductora mujer.</li><li><strong>Compartir viaje:</strong> enviá tu recorrido en tiempo real.</li><li><strong>Grabación de audio:</strong> permite activar grabación del viaje.</li><li><strong>SOS:</strong> conecta con el centro de atención.</li></ul>
+              <a href="https://web.didiglobal.com/ar/seguridad/" target="_blank" rel="noopener noreferrer" class="app-link">Ver guía de seguridad →</a>
+            </div>
+            <div class="app-card">
+              <div class="app-header"><span class="app-logo cabify">C</span><h3>Cabify</h3></div>
+              <ul><li><strong>Perfil verificado:</strong> conductores con verificación de antecedentes.</li><li><strong>Viaje compartido:</strong> seguimiento en tiempo real.</li><li><strong>Calificaciones:</strong> consultá el historial del conductor.</li><li><strong>Soporte 24/7:</strong> chat de ayuda durante el viaje.</li></ul>
+              <a href="https://cabify.com/es/seguridad" target="_blank" rel="noopener noreferrer" class="app-link">Ver guía de seguridad →</a>
+            </div>
+            <div class="app-card">
+              <div class="app-header"><span class="app-logo maps">📍</span><h3>Google Maps</h3></div>
+              <ul><li><strong>Compartir ubicación:</strong> en tiempo real con contactos de confianza.</li><li><strong>Descarga offline:</strong> descargá el mapa antes de salir.</li><li><strong>Sin datos:</strong> funciona offline con mapas descargados.</li><li><strong>Rutas alternativas:</strong> revisá opciones antes de salir.</li></ul>
+              <a href="https://support.google.com/maps/answer/7326816" target="_blank" rel="noopener noreferrer" class="app-link">Cómo compartir ubicación →</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn">&#8592;</button>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <button class="carousel-btn" id="nextBtn">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUIDARSE -->
+  <section class="section" id="cuidarse">
+    <div class="container">
+      <span class="section-label">Hábitos</span>
+      <h2 class="section-title">¿Cómo cuidarse mejor cuando viajamos?</h2>
+      <p class="section-intro">Un conjunto de hábitos simples que marcan una gran diferencia en tu seguridad diaria.</p>
+      <div class="accordion" id="accordion">
+        <div class="accordion-item"><button class="accordion-btn">Antes de salir del alojamiento</button><div class="accordion-content"><p>Informá a alguien de confianza tu itinerario. Llevá el teléfono cargado y tu powerbank. Revisá el clima y alertas locales. Guardá los números de emergencia.</p></div></div>
+        <div class="accordion-item"><button class="accordion-btn">En transporte público</button><div class="accordion-content"><p>Sentate cerca del conductor o grupos de personas. Evitá dormirte con auriculares. Guardá el teléfono en un bolsillo interno.</p></div></div>
+        <div class="accordion-item"><button class="accordion-btn">En espacios desconocidos</button><div class="accordion-content"><p>Actuá con seguridad: caminar con paso firme reduce el riesgo. Evitá el uso del teléfono en la calle. Identificá salidas de emergencia al entrar.</p></div></div>
+        <div class="accordion-item"><button class="accordion-btn">Al llegar a un lugar nuevo</button><div class="accordion-content"><p>Orientate antes de oscurecer. Identificá la comisaría, hospital y farmacia más cercanos. Preguntá sobre zonas a evitar.</p></div></div>
+        <div class="accordion-item"><button class="accordion-btn">Seguridad digital</button><div class="accordion-content"><p>Usá contraseña en tu teléfono y activá el borrado remoto. Evitá WiFi públicas sin VPN. No publiques tu ubicación en tiempo real en redes.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCIAS -->
+  <section class="section section-dark" id="emergencias">
+    <div class="container">
+      <span class="section-label light">Emergencias</span>
+      <h2 class="section-title" style="color:var(--white)">Contactos de emergencia</h2>
+      <p class="section-intro light">Guardá estos contactos antes de salir.</p>
+      <div class="emergency-grid">
+        <a href="tel:911" class="emergency-card"><h3>911</h3><p>Emergencias generales en Argentina y varios países de América Latina.</p></a>
+        <a href="https://www.argentina.gob.ar/linea137" target="_blank" rel="noopener noreferrer" class="emergency-card"><h3>Línea 137</h3><p>Atención a víctimas de violencia familiar y sexual. Argentina, gratuita, 24hs.</p></a>
+        <a href="https://www.argentina.gob.ar/justicia/derechofacil/leaflets/linea-144" target="_blank" rel="noopener noreferrer" class="emergency-card"><h3>Línea 144</h3><p>Atención en situaciones de violencia de género. Argentina.</p></a>
+        <a href="https://www.interpol.int/es/Como-trabajamos/Apoyo-a-las-personas-en-riesgo" target="_blank" rel="noopener noreferrer" class="emergency-card"><h3>Interpol</h3><p>Apoyo internacional en situaciones de riesgo durante viajes al extranjero.</p></a>
+        <a href="https://www.cancilleria.gob.ar/es/consulados" target="_blank" rel="noopener noreferrer" class="emergency-card"><h3>Consulados AR</h3><p>Directorio de consulados argentinos en el exterior.</p></a>
+        <a href="https://www.who.int/es/emergencies/disease-outbreak-news" target="_blank" rel="noopener noreferrer" class="emergency-card"><h3>OMS</h3><p>Alertas sanitarias internacionales para viajeras.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <span class="section-label">Tu experiencia</span>
+      <h2 class="section-title">Dejá tu consejo</h2>
+      <p class="section-intro">¿Tenés un tip que pueda ayudar a otra viajera? Compartilo con la comunidad.</p>
+      <div class="form-wrapper">
+        <form id="commentForm" novalidate>
+          <div class="form-group">
+            <label for="userName">Tu nombre</label>
+            <input type="text" id="userName" placeholder="¿Cómo te llamás?" autocomplete="off" />
+            <span class="form-error" id="errorNombre"></span>
+          </div>
+          <div class="form-group">
+            <label for="userComment">Tu consejo o experiencia</label>
+            <textarea id="userComment" placeholder="Compartí lo que aprendiste viajando..." rows="5"></textarea>
+            <span class="form-error" id="errorComentario"></span>
+          </div>
+          <button type="submit" class="btn-submit">Enviar →</button>
+        </form>
+        <div id="formSuccess" class="form-success hidden">
+          <span class="success-icon">✓</span>
+          <p>¡Gracias! Tu consejo ayuda a otras viajeras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Avisa que llegué</div>
+        <div class="footer-tagline">Para las que viajan solas y llegan bien.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#por-que">¿Por qué?</a>
+        <a href="#defensa">Defensa</a>
+        <a href="#apps">Apps</a>
+        <a href="#cuidarse">Hábitos</a>
+        <a href="#emergencias">Emergencias</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2025 Avisa que llegué — Ante una emergencia real, llamá al 911.</div>
+  </footer>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal-overlay" id="loginOverlay">
+    <div class="modal">
+      <button class="modal-close" id="closeLogin">✕</button>
+      <div class="modal-title">Bienvenida 💜</div>
+      <div class="modal-sub">Ingresá para acceder a tu perfil de emergencia.</div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth="login">Iniciar sesión</button>
+        <button class="auth-tab" data-auth="register">Registrarme</button>
+      </div>
+      <div class="auth-panel active" id="auth-login">
+        <button class="google-btn" id="googleLoginBtn">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+          Continuar con Google
+        </button>
+        <div class="divider">o con tu email</div>
+        <label class="input-label">Email</label>
+        <input type="email" class="input-field" id="loginEmail" placeholder="tucorreo@email.com" />
+        <label class="input-label">Contraseña</label>
+        <input type="password" class="input-field" id="loginPass" placeholder="••••••••" />
+        <button class="btn-full" id="loginBtn">Ingresar →</button>
+      </div>
+      <div class="auth-panel" id="auth-register">
+        <button class="google-btn" id="googleRegisterBtn">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+          Registrarme con Google
+        </button>
+        <div class="divider">o con tu email</div>
+        <label class="input-label">Nombre completo</label>
+        <input type="text" class="input-field" id="regName" placeholder="Tu nombre" />
+        <label class="input-label">Email</label>
+        <input type="email" class="input-field" id="regEmail" placeholder="tucorreo@email.com" />
+        <label class="input-label">Contraseña</label>
+        <input type="password" class="input-field" id="regPass" placeholder="Mínimo 8 caracteres" />
+        <button class="btn-full" id="registerBtn">Crear cuenta →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PERFIL -->
+  <div class="modal-overlay" id="profileOverlay">
+    <div class="modal profile-modal">
+      <button class="modal-close" id="closeProfile">✕</button>
+      <div class="profile-header">
+        <div class="profile-avatar" id="profileAvatar">M</div>
+        <div>
+          <div class="profile-name" id="profileName">María</div>
+          <div class="profile-email" id="profileEmailDisplay">maria@email.com</div>
+          <div style="font-size:0.78rem;color:var(--fuchsia);margin-top:0.2rem;font-weight:600;">✓ Perfil de emergencia activo</div>
+        </div>
+      </div>
+      <div class="profile-sections">
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">👤 Datos personales</div></div>
+          <div class="profile-section-body">
+            <div class="profile-row">
+              <div class="profile-field"><label>Nombre completo</label><input type="text" id="pNombre" placeholder="Tu nombre completo" /></div>
+              <div class="profile-field"><label>Fecha de nacimiento</label><input type="date" id="pFecha" /></div>
+              <div class="profile-field"><label>Nacionalidad</label><input type="text" id="pNacionalidad" placeholder="Ej: Argentina" /></div>
+              <div class="profile-field"><label>Nº de documento</label><input type="text" id="pDocumento" placeholder="Ej: 38.000.000" /></div>
+              <div class="profile-field full"><label>Dirección de residencia</label><input type="text" id="pDireccion" placeholder="Calle, número, ciudad, país" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">🩺 Datos médicos</div></div>
+          <div class="profile-section-body">
+            <div class="profile-row">
+              <div class="profile-field"><label>Grupo sanguíneo</label><select id="pSangre"><option value="">Seleccionar...</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+              <div class="profile-field"><label>¿Usás anteojos o lentes?</label><select id="pVision"><option value="">Seleccionar...</option><option>No</option><option>Anteojos</option><option>Lentes de contacto</option></select></div>
+              <div class="profile-field full"><label>Alergias conocidas</label><div class="tag-input-wrap" id="alergiasWrap"><input type="text" class="tag-add-input" id="alergiaInput" placeholder="+ Agregar alergia" /></div></div>
+              <div class="profile-field full"><label>Medicamentos que tomás</label><div class="tag-input-wrap" id="medicamentosWrap"><input type="text" class="tag-add-input" id="medicamentoInput" placeholder="+ Agregar medicamento" /></div></div>
+              <div class="profile-field full"><label>Condiciones médicas relevantes</label><textarea id="pCondiciones" rows="2" placeholder="Ej: Diabetes tipo 1, epilepsia, asma..."></textarea></div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">📞 Contactos de emergencia</div></div>
+          <div class="profile-section-body">
+            <div id="contactsContainer">
+              <div class="contact-card" style="margin-bottom:0.5rem;">
+                <div><label class="input-label">Nombre</label><input type="text" placeholder="Ej: Mamá" /></div>
+                <div><label class="input-label">Teléfono</label><input type="tel" placeholder="+54 9 11..." /></div>
+                <button class="btn-icon" style="background:var(--lilac);color:var(--berry);margin-top:1.2rem;" disabled>✓</button>
+              </div>
+            </div>
+            <button class="btn-add-contact" id="addContactBtn">+ Agregar otro contacto</button>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">📍 Ubicación actual</div></div>
+          <div class="profile-section-body">
+            <div class="location-box">
+              <div class="location-text"><strong id="locationText">Sin ubicación guardada</strong>Actualizá tu ubicación antes de salir.</div>
+              <button class="btn-outline" id="getLocationBtn">📍 Obtener ubicación</button>
+            </div>
+            <div class="profile-field" style="margin-top:0.75rem;"><label>Alojamiento actual</label><input type="text" id="pAlojamiento" placeholder="Ej: Hotel Andes, Av. Corrientes 1234" /></div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">📄 Documentos</div></div>
+          <div class="profile-section-body">
+            <div class="profile-row">
+              <div class="profile-field"><label>Número de pasaporte</label><input type="text" id="pPasaporte" placeholder="Ej: AAB123456" /></div>
+              <div class="profile-field"><label>Vencimiento del pasaporte</label><input type="date" id="pPasaporteVenc" /></div>
+              <div class="profile-field"><label>Número de seguro de viaje</label><input type="text" id="pSeguro" placeholder="Nº de póliza" /></div>
+              <div class="profile-field"><label>Teléfono del seguro</label><input type="tel" id="pSeguroTel" placeholder="+1 800..." /></div>
+              <div class="profile-field full"><label>Notas adicionales</label><textarea id="pNotas" rows="2" placeholder="Cualquier información relevante para una emergencia..."></textarea></div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-section-header"><div class="profile-section-title">🆘 Tu código QR de emergencia</div></div>
+          <div class="profile-section-body">
+            <div class="qr-box">
+              <div class="qr-canvas-wrap"><canvas id="qrCanvas" width="120" height="120"></canvas></div>
+              <div class="qr-info">
+                <h4>Compartilo o imprimilo</h4>
+                <p>Cualquier persona que escanee este QR verá tus datos médicos clave y contactos de emergencia.</p>
+                <button class="btn-outline" id="downloadQrBtn">⬇ Descargar QR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="save-bar">
+        <button class="btn-secondary" id="logoutBtn">Cerrar sesión</button>
+        <button class="btn-full" style="width:auto;padding:0.7rem 2rem;" id="saveProfileBtn">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Librería QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- JavaScript propio -->
+  <script src="script.js"></script>
+</body>
+</html>
