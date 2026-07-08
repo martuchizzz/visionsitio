@@ -251,3 +251,426 @@ document.getElementById('commentForm').addEventListener('submit', function(e) {
     document.getElementById('formSuccess').classList.remove('hidden');
   }
 });
+// CENTROS DE ATENCIÓN A LA MUJER
+// LISTA DE CENTROS
+// ===========================
+
+const centros = [
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Tres de Febrero",
+tipo:"comisaria",
+direccion:"Tres de Febrero, Buenos Aires",
+telefono:"011 2194-2533"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - San Martín",
+tipo:"comisaria",
+direccion:"San Martín, Buenos Aires",
+telefono:"011 4512-6712"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - San Justo",
+tipo:"comisaria",
+direccion:"San Justo, La Matanza, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Morón",
+tipo:"comisaria",
+direccion:"Morón, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - José León Suárez",
+tipo:"comisaria",
+direccion:"José León Suárez, San Martín, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Hurlingham",
+tipo:"comisaria",
+direccion:"Hurlingham, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Gregorio de Laferrere",
+tipo:"comisaria",
+direccion:"Gregorio de Laferrere, La Matanza, Buenos Aires",
+telefono:"011 2102-4555"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - San Isidro",
+tipo:"comisaria",
+direccion:"San Isidro, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - San Fernando",
+tipo:"comisaria",
+direccion:"San Fernando, Buenos Aires",
+telefono:"011 4519-9882"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Vicente López",
+tipo:"comisaria",
+direccion:"Vicente López, Buenos Aires",
+telefono:"011 4711-7887"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Tigre",
+tipo:"comisaria",
+direccion:"Tigre, Buenos Aires",
+telefono:"011 2121-6865"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Esteban Echeverría",
+tipo:"comisaria",
+direccion:"Esteban Echeverría, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Lomas de Zamora",
+tipo:"comisaria",
+direccion:"Lomas de Zamora, Buenos Aires",
+telefono:"011 4244-1474"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Florencio Varela",
+tipo:"comisaria",
+direccion:"Florencio Varela, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Ituzaingó",
+tipo:"comisaria",
+direccion:"Ituzaingó, Buenos Aires",
+telefono:"Consultar"
+},
+
+{
+nombre:"Comisaría de la Mujer y la Familia - Merlo",
+tipo:"comisaria",
+direccion:"Merlo, Buenos Aires",
+telefono:"(0220) 483-6060"
+},
+
+{
+nombre:"Centro Integral de la Mujer Isabel Calvo",
+tipo:"centro",
+direccion:"Humberto 1° 250, San Telmo, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Alicia Moreau",
+tipo:"centro",
+direccion:"Presidente José Evaristo Uriburu 1022, Recoleta, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Margarita Malharro",
+tipo:"centro",
+direccion:"Agüero 301, Almagro, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Pepa Gaitán",
+tipo:"centro",
+direccion:"Pichincha 1765, Boedo, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Florentina Gómez Miranda",
+tipo:"centro",
+direccion:"Patricias Argentinas 277, Caballito, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Dignxs de Ser",
+tipo:"centro",
+direccion:"Lautaro 188, Flores, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Minerva Mirabal",
+tipo:"centro",
+direccion:"Av. Fernández de la Cruz 4208, Villa Lugano, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Carolina Muzzili",
+tipo:"centro",
+direccion:"Avellaneda 3751, Floresta, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer María Gallego",
+tipo:"centro",
+direccion:"Av. Francisco Beiró 5229, Villa Devoto, CABA",
+telefono:"011 4568-1245"
+},
+
+{
+nombre:"Centro Integral de la Mujer Lohana Berkins",
+tipo:"centro",
+direccion:"Av. Triunvirato y Crisólogo Larralde, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Centro Integral de la Mujer Macacha Güemes",
+tipo:"centro",
+direccion:"Vuelta de Obligado 1524, Belgrano, CABA",
+telefono:"Consultar"
+},
+{
+nombre:"Centro de Justicia de la Mujer - La Boca",
+tipo:"justicia",
+direccion:"Av. Don Pedro de Mendoza 2689, La Boca, CABA",
+telefono:"0800-999-68537"
+},
+
+{
+nombre:"Centro de Justicia de la Mujer - Caballito",
+tipo:"justicia",
+direccion:"Yerbal 31, Caballito, CABA",
+telefono:"0800-999-68537"
+},
+
+{
+nombre:"Centro de Justicia de la Mujer - Microcentro",
+tipo:"justicia",
+direccion:"Av. de Mayo 654, CABA",
+telefono:"0800-999-68537"
+},
+
+{
+nombre:"Subsecretaría de Mujeres, Géneros y Diversidad",
+tipo:"otro",
+direccion:"Av. 53 N°653, La Plata, Buenos Aires",
+telefono:"(221) 489-3960"
+},
+
+{
+nombre:"Casa de la Mujer",
+tipo:"otro",
+direccion:"Av. Francisco Beiró 5229, Villa Devoto, CABA",
+telefono:"(011) 4512-6712"
+},
+
+{
+nombre:"Dirección General de Violencia de Género - Sede Central",
+tipo:"otro",
+direccion:"Rodney 301, Chacarita, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Dirección General de Violencia de Género - Sede Comuna 1",
+tipo:"otro",
+direccion:"Av. de los Inmigrantes 2250, Retiro, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Dirección General de Violencia de Género - Sede Comuna 4",
+tipo:"otro",
+direccion:"Zavaleta 425, Parque Patricios, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Dirección General de Violencia de Género - Sede Comuna 6",
+tipo:"otro",
+direccion:"Av. Patricias Argentinas 277, Caballito, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Dirección General de Violencia de Género - Sede Comuna 8",
+tipo:"otro",
+direccion:"Av. Roca 5252, Villa Lugano, CABA",
+telefono:"Consultar"
+},
+
+{
+nombre:"Violencia Familiar y de Género - Oficina de Atención",
+tipo:"otro",
+direccion:"Ciudad de Buenos Aires",
+telefono:"Consultar"
+}
+
+];
+
+
+// ===========================
+// FUNCIONES DE CENTROS
+// ===========================
+
+const centrosGrid = document.getElementById("centrosGrid");
+const buscarCentro = document.getElementById("buscarCentro");
+const filtroTipo = document.getElementById("filtroTipo");
+const centrosContador = document.getElementById("centrosContador");
+
+
+function crearLinkMaps(centro){
+
+  const direccion = `${centro.nombre} ${centro.direccion}`;
+
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion)}`;
+
+}
+
+
+function mostrarCentros(lista){
+
+  if(!centrosGrid) return;
+
+  centrosGrid.innerHTML = "";
+
+  centrosContador.textContent =
+  `${lista.length} centros encontrados`;
+
+
+  lista.forEach(centro=>{
+
+
+    const tarjeta = document.createElement("article");
+
+    tarjeta.classList.add("centro-card");
+
+
+const tipos = {
+  comisaria: "COMISARÍA",
+  centro: "CENTRO INTEGRAL",
+  justicia: "JUSTICIA",
+  otro: "ORGANISMO"
+};
+
+tarjeta.innerHTML = `
+
+<div class="card-top">
+
+  <div class="card-icon">📍</div>
+
+  <span class="card-tag">
+    ${tipos[centro.tipo]}
+  </span>
+
+</div>
+
+<h3>${centro.nombre}</h3>
+
+<hr>
+
+<p class="card-info">
+  📍 ${centro.direccion}
+</p>
+
+<p class="card-info">
+  ☎ ${
+    centro.telefono !== "Consultar"
+    ? `<a href="tel:${centro.telefono}">${centro.telefono}</a>`
+    : "Consultar"
+  }
+</p>
+
+<a
+class="btn-maps"
+href="${crearLinkMaps(centro)}"
+target="_blank">
+
+Ver en Google Maps
+
+</a>
+
+`;
+
+
+centrosGrid.appendChild(tarjeta);
+
+  });
+
+}
+
+
+
+function filtrarCentros(){
+
+
+const texto = buscarCentro.value.toLowerCase();
+
+const tipo = filtroTipo.value;
+
+
+const resultado = centros.filter(centro=>{
+
+
+const coincideTexto =
+centro.nombre.toLowerCase().includes(texto) ||
+(centro.direccion &&
+centro.direccion.toLowerCase().includes(texto));
+
+const coincideTipo =
+tipo === "todos" ||
+centro.tipo === tipo;
+
+
+return coincideTexto && coincideTipo;
+
+
+});
+
+
+mostrarCentros(resultado);
+
+
+}
+
+
+
+if(buscarCentro){
+
+buscarCentro.addEventListener(
+"input",
+filtrarCentros
+);
+
+}
+
+
+if(filtroTipo){
+
+filtroTipo.addEventListener(
+"change",
+filtrarCentros
+);
+
+}
+
+
+// mostrar al cargar
+
+mostrarCentros(centros);
