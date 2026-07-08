@@ -571,16 +571,19 @@ const tipos = {
 
 tarjeta.innerHTML = `
 
-<div class="card-top">
+<div class="card-img">
+  <img
+    src="morado/WhatsApp Image 2026-07-06 at 6.23.09 PM.jpeg"
+    alt="${centro.nombre}">
+</div>
 
-  <div class="card-icon">📍</div>
+<div class="card-top">
 
   <span class="card-tag">
     ${tipos[centro.tipo]}
   </span>
 
 </div>
-
 <h3>${centro.nombre}</h3>
 
 <hr>
