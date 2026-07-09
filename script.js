@@ -647,3 +647,106 @@ filtrarCentros
 // mostrar al cargar
 
 mostrarCentros(centros);
+
+// ── PDF DE EMERGENCIA ──
+function generatePDF() {
+  if (!currentUser) return alert('Primero iniciá sesión y completá tu perfil.');
+  const p = currentUser.profile || {};
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const W = 210;
+
+  // Fondo header
+  doc.setFillColor(85, 36, 81);
+  doc.rect(0, 0, W, 45, 'F');
+
+  // Nombre del sitio
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(22);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Avisa que llegué', 15, 20);
+
+  // Subtítulo
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Perfil de Emergencia Personal', 15, 30);
+
+  // Fecha
+  const fecha = new Date().toLocaleDateString('es-AR', { day:'2-digit', month:'long', year:'numeric' });
+  doc.setFontSize(9);
+  doc.text(`Actualizado: ${fecha}`, 15, 39);
+
+  // Línea fuchsia
+  doc.setFillColor(158, 56, 105);
+  doc.rect(0, 45, W, 4, 'F');
+
+  let y = 58;
+
+  function seccion(titulo, campos) {
+    doc.setFillColor(232, 213, 232);
+    doc.rect(10, y - 5, W - 20, 8, 'F');
+    doc.setTextColor(85, 36, 81);
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'bold');
+    doc.text(titulo, 14, y);
+    y += 8;
+
+    campos.forEach(([label, valor]) => {
+      if (!valor) return;
+      doc.setFontSize(9);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(107, 72, 115);
+      doc.text(label + ':', 14, y);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(26, 26, 26);
+      const lines = doc.splitTextToSize(valor, 130);
+      doc.text(lines, 65, y);
+      y += lines.length * 6;
+    });
+    y += 6;
+  }
+
+  seccion('DATOS PERSONALES', [
+    ['Nombre',        p.nombre || currentUser.name],
+    ['Fecha de nac.', p.fecha || '—'],
+    ['Nacionalidad',  p.nacionalidad || '—'],
+    ['Documento',     p.documento || '—'],
+    ['Dirección',     p.direccion || '—'],
+  ]);
+
+  seccion('DATOS MÉDICOS', [
+    ['Grupo sanguíneo', p.sangre || '—'],
+    ['Visión',          p.vision || '—'],
+    ['Alergias',        (p.alergias || []).join(', ') || 'Ninguna'],
+    ['Medicamentos',    (p.medicamentos || []).join(', ') || 'Ninguno'],
+    ['Condiciones',     p.condiciones || '—'],
+  ]);
+
+  seccion('DOCUMENTOS', [
+    ['Pasaporte',       p.pasaporte || '—'],
+    ['Vence',           p.pasaporteVenc || '—'],
+    ['Seguro (póliza)', p.seguro || '—'],
+    ['Tel. seguro',     p.seguroTel || '—'],
+    ['Alojamiento',     p.alojamiento || '—'],
+  ]);
+
+  if (p.notas) {
+    seccion('NOTAS ADICIONALES', [
+      ['Notas', p.notas],
+    ]);
+  }
+
+  // Pie de página
+  doc.setFillColor(85, 36, 81);
+  doc.rect(0, 280, W, 17, 'F');
+  doc.setTextColor(216, 179, 212);
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Avisa que llegué — Para las que viajan solas y llegan bien.', 15, 288);
+  doc.text('Ante una emergencia real, llamá al 911.', 15, 293);
+
+  const nombreArchivo = `perfil-emergencia-${(p.nombre || currentUser.name).replace(/\s+/g,'-').toLowerCase()}.pdf`;
+  doc.save(nombreArchivo);
+}
+
+document.getElementById('downloadPdfBtn').addEventListener('click', generatePDF);
