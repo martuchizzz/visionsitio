@@ -142,7 +142,6 @@ document.getElementById('saveProfileBtn').addEventListener('click', () => {
     medicamentos: Array.from(document.querySelectorAll('#medicamentosWrap .tag')).map(t => t.dataset.value),
   };
   localStorage.setItem('aql_user', JSON.stringify(currentUser));
-  generateQR();
   const btn = document.getElementById('saveProfileBtn');
   btn.textContent = '✓ Guardado';
   btn.style.background = 'var(--plum)';
@@ -162,7 +161,6 @@ function loadProfileUI() {
   // tags
   (p.alergias||[]).forEach(v => addTag('alergiasWrap', v));
   (p.medicamentos||[]).forEach(v => addTag('medicamentosWrap', v));
-  generateQR();
 }
 
 // Tags
