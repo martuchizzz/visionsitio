@@ -207,34 +207,6 @@ document.getElementById('getLocationBtn').addEventListener('click', () => {
     document.getElementById('locationText').textContent = 'No se pudo obtener la ubicación.';
   });
 });
-
-// QR
-function generateQR() {
-  const canvas = document.getElementById('qrCanvas');
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0,0,120,120);
-  if (!currentUser) return;
-  const p = currentUser.profile || {};
-  const data = `EMERGENCIA\nNombre: ${p.nombre||currentUser.name}\nSangre: ${p.sangre||'N/D'}\nAlergias: ${(p.alergias||[]).join(', ')||'Ninguna'}\nMedicamentos: ${(p.medicamentos||[]).join(', ')||'Ninguno'}\nCondiciones: ${p.condiciones||'N/D'}`;
-  // QR simple visual (representación)
-  ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,120,120);
-  ctx.fillStyle = '#552451';
-  const size = 4;
-  const hash = [...data].reduce((a,c) => a + c.charCodeAt(0), 0);
-  for (let r=0;r<30;r++) for(let c=0;c<30;c++) {
-    if (((r*31+c*7+hash)%3===0)||(r<7&&c<7&&!(r>1&&r<5&&c>1&&c<5))||(r<7&&c>22&&!(r>1&&r<5&&c>22&&c<26))||(r>22&&c<7&&!(r>22&&r<26&&c>1&&c<5)))
-      ctx.fillRect(c*size, r*size, size, size);
-  }
-}
-
-document.getElementById('downloadQrBtn').addEventListener('click', () => {
-  const canvas = document.getElementById('qrCanvas');
-  const link = document.createElement('a');
-  link.download = 'mi-qr-emergencia.png';
-  link.href = canvas.toDataURL();
-  link.click();
-});
-
 // ── FORMULARIO DE COMENTARIOS ──
 // Formulario
 document.getElementById('commentForm').addEventListener('submit', function(e) {
