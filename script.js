@@ -503,6 +503,18 @@ const centrosGrid = document.getElementById("centrosGrid");
 const buscarCentro = document.getElementById("buscarCentro");
 const filtroTipo = document.getElementById("filtroTipo");
 const centrosContador = document.getElementById("centrosContador");
+// ===========================
+// PAGINACIÓN
+// ===========================
+
+const tarjetasPorPagina = 9;
+
+let paginaActual = 1;
+
+let listaActual = centros;
+
+const btnAnterior = document.getElementById("btnAnterior");
+const btnSiguiente = document.getElementById("btnSiguiente");
 
 
 function crearLinkMaps(centro){
@@ -520,19 +532,18 @@ function mostrarCentros(lista){
 
   centrosGrid.innerHTML = "";
 
-  centrosContador.textContent =
-  `${lista.length} centros encontrados`;
+centrosContador.textContent =
+`${lista.length} centros encontrados | Página ${paginaActual} de ${Math.ceil(lista.length / tarjetasPorPagina)}`;
 
+const inicio = (paginaActual - 1) * tarjetasPorPagina;
 
-  lista.forEach(centro=>{
+const fin = inicio + tarjetasPorPagina;
 
+const pagina = lista.slice(inicio, fin);
 
-    const tarjeta = document.createElement("article");
+pagina.forEach(centro=>
 
-    tarjeta.classList.add("centro-card");
-
-
-const tipos = {
+{const tipos = {
   comisaria: "COMISARÍA",
   centro: "CENTRO INTEGRAL",
   justicia: "JUSTICIA",
@@ -541,10 +552,17 @@ const tipos = {
 
 tarjeta.innerHTML = `
 
-<div class="card-img">
-  <img
-    src="morado/WhatsApp Image 2026-07-06 at 6.23.09 PM.jpeg"
-    alt="${centro.nombre}">
+<div class="card-top">
+
+    <img
+        class="card-icon"
+        src="imagenes/pin.png.jpeg"
+        alt="Pin">
+
+    <span class="card-tag">
+        ${tipos[centro.tipo]}
+    </span>
+
 </div>
 
 <div class="card-top">
@@ -615,7 +633,9 @@ return coincideTexto && coincideTipo;
 
 
 });
+listaActual = resultado;
 
+paginaActual = 1;
 
 mostrarCentros(resultado);
 
@@ -642,7 +662,34 @@ filtrarCentros
 );
 
 }
+// ===========================
+// BOTONES PAGINACIÓN
+// ===========================
 
+btnAnterior.addEventListener("click",()=>{
+
+    if(paginaActual>1){
+
+        paginaActual--;
+
+        mostrarCentros(listaActual);
+
+    }
+
+});
+
+
+btnSiguiente.addEventListener("click",()=>{
+
+    if(paginaActual<Math.ceil(listaActual.length/tarjetasPorPagina)){
+
+        paginaActual++;
+
+        mostrarCentros(listaActual);
+
+    }
+
+});
 
 // mostrar al cargar
 

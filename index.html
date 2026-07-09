@@ -182,45 +182,93 @@
       </div>
     </div>
   </section>
-  <!-- CENTROS DE ATENCIÓN A LA MUJER -->
+ <!-- ==========================================
+     CENTROS DE ATENCIÓN A LA MUJER
+========================================== -->
+
 <section class="section section-tinted" id="centros">
-  <div class="container fade-in">
 
-    <span class="section-label">Recursos de ayuda</span>
+    <div class="container fade-in">
 
-    <h2 class="section-title">
-      Centros de atención a la mujer
-    </h2>
+        <span class="section-label">
+            Recursos de ayuda
+        </span>
 
-    <p class="section-intro">
-      Encontrá comisarías especializadas, centros integrales y espacios
-      de asistencia cercanos. Podés buscar por localidad, nombre o tipo
-      de organismo.
-    </p>
+        <h2 class="section-title titulo-centros">
 
-    <div class="centros-filtros">
+            <img
+                src="imagenes/pin.png.jpeg"
+                class="pin-titulo"
+                alt="Pin">
 
-      <input 
-        type="text" 
-        id="buscarCentro"
-        placeholder="Buscar por nombre, localidad o dirección..."
-      >
+            Centros de atención a la mujer
 
-      <select id="filtroTipo">
-        <option value="todos">Todos los centros</option>
-        <option value="comisaria">Comisarías de la Mujer</option>
-        <option value="centro">Centros Integrales</option>
-        <option value="justicia">Centros de Justicia</option>
-        <option value="otro">Otros organismos</option>
-      </select>
+        </h2>
 
-    </div>
+        <p class="section-intro">
 
-    <p id="centrosContador"></p>
+            Encontrá comisarías especializadas, centros integrales y
+            organismos de asistencia cercanos.
 
-    <div id="centrosGrid" class="centros-grid"></div>
+            Buscá por nombre, localidad o tipo de centro.
 
-  </div>
+        </p>
+
+
+        <div class="centros-filtros">
+
+            <input
+                type="text"
+                id="buscarCentro"
+                placeholder="🔎 Buscar centro, localidad o dirección...">
+
+            <select id="filtroTipo">
+
+                <option value="todos">
+                    Todos los centros
+                </option>
+
+                <option value="comisaria">
+                    Comisarías de la Mujer
+                </option>
+
+                <option value="centro">
+                    Centros Integrales
+                </option>
+
+                <option value="justicia">
+                    Centros de Justicia
+                </option>
+
+                <option value="otro">
+                    Otros organismos
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <p id="centrosContador"></p>
+
+
+        <div
+            
+            class="centrosid="centrosGrid
+        </div>
+        <div class="paginacion">
+
+    <button id="btnAnterior">
+        ⬅ Anterior
+    </button>
+
+    <button id="btnSiguiente">
+        Siguiente ➜
+    </button>
+
+</div>
+
+
 </section>
 
 
