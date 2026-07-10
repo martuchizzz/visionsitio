@@ -1025,3 +1025,30 @@ box-shadow:0 10px 20px rgba(168,85,247,.35);
     background:#6F2DBD;
 
 }
+.carrusel-centros{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.centros-ventana{
+    overflow:hidden;
+    width:100%;
+}
+
+.centros-grid{
+    display:flex;
+    gap:20px;
+    transition:transform 0.4s ease;
+}
+
+.centros-grid .card{
+    min-width:300px;
+}
+
+.carrusel-centros button{
+    cursor:pointer;
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+}

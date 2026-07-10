@@ -503,6 +503,35 @@ const centrosGrid = document.getElementById("centrosGrid");
 const buscarCentro = document.getElementById("buscarCentro");
 const filtroTipo = document.getElementById("filtroTipo");
 const centrosContador = document.getElementById("centrosContador");
+
+function mostrarCentros(lista) {
+
+  if (!centrosGrid) return;
+
+  centrosGrid.innerHTML = "";
+
+  if (centrosContador) {
+    centrosContador.textContent = `${lista.length} centros encontrados`;
+  }
+
+  lista.forEach(centro => {
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "card";
+
+    tarjeta.innerHTML = `
+      <h3>${centro.nombre}</h3>
+      <p>📍 ${centro.direccion}</p>
+      <p>☎ ${centro.telefono}</p>
+    `;
+
+    centrosGrid.appendChild(tarjeta);
+
+  });
+
+}
+mostrarCentros(centros);
+
 // ===========================
 // PAGINACIÓN
 // ===========================
@@ -532,79 +561,43 @@ function mostrarCentros(lista){
 
   centrosGrid.innerHTML = "";
 
-centrosContador.textContent =
-`${lista.length} centros encontrados | Página ${paginaActual} de ${Math.ceil(lista.length / tarjetasPorPagina)}`;
+  lista.forEach(centro => {
 
-const inicio = (paginaActual - 1) * tarjetasPorPagina;
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "card";
 
-const fin = inicio + tarjetasPorPagina;
-
-const pagina = lista.slice(inicio, fin);
-
-pagina.forEach(centro=>
-
-{const tipos = {
-  comisaria: "COMISARÍA",
-  centro: "CENTRO INTEGRAL",
-  justicia: "JUSTICIA",
-  otro: "ORGANISMO"
-};
-
-tarjeta.innerHTML = `
-
-<div class="card-top">
-
-    <img
+    tarjeta.innerHTML = `
+      <div class="card-top">
+        <img 
         class="card-icon"
         src="imagenes/pin.png.jpeg"
         alt="Pin">
 
-    <span class="card-tag">
-        ${tipos[centro.tipo]}
-    </span>
+        <span class="card-tag">
+          ${centro.tipo}
+        </span>
+      </div>
 
-</div>
+      <h3>${centro.nombre}</h3>
 
-<div class="card-top">
+      <p>📍 ${centro.direccion}</p>
 
-  <span class="card-tag">
-    ${tipos[centro.tipo]}
-  </span>
+      <p>☎ ${centro.telefono}</p>
 
-</div>
-<h3>${centro.nombre}</h3>
+      <a class="btn-maps"
+      href="${crearLinkMaps(centro)}"
+      target="_blank">
+      Ver en Google Maps
+      </a>
+    `;
 
-<hr>
-
-<p class="card-info">
-  📍 ${centro.direccion}
-</p>
-
-<p class="card-info">
-  ☎ ${
-    centro.telefono !== "Consultar"
-    ? `<a href="tel:${centro.telefono}">${centro.telefono}</a>`
-    : "Consultar"
-  }
-</p>
-
-<a
-class="btn-maps"
-href="${crearLinkMaps(centro)}"
-target="_blank">
-
-Ver en Google Maps
-
-</a>
-
-`;
-
-
-centrosGrid.appendChild(tarjeta);
+    centrosGrid.appendChild(tarjeta);
 
   });
 
 }
+mostrarCentros(centros);
+
 
 
 
@@ -797,3 +790,35 @@ function generatePDF() {
 }
 
 document.getElementById('downloadPdfBtn').addEventListener('click', generatePDF);
+const centrosCarrusel = document.getElementById("centrosGrid");
+const centrosNext = document.getElementById("centrosNext");
+const centrosPrev = document.getElementById("centrosPrev");
+
+let movimientoCentros = 0;
+
+if(centrosNext && centrosPrev){
+
+  centrosNext.addEventListener("click", ()=>{
+
+    movimientoCentros += 320;
+
+    centrosCarrusel.style.transform =
+    `translateX(-${movimientoCentros}px)`;
+
+  });
+
+
+  centrosPrev.addEventListener("click", ()=>{
+
+    movimientoCentros -= 320;
+
+    if(movimientoCentros < 0){
+      movimientoCentros = 0;
+    }
+
+    centrosCarrusel.style.transform =
+    `translateX(-${movimientoCentros}px)`;
+
+  });
+
+}
