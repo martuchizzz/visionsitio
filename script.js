@@ -822,3 +822,66 @@ if(centrosNext && centrosPrev){
   });
 
 }
+// ── MAPA LEAFLET ──
+if (document.getElementById('mapa')) {
+  const mapa = L.map('mapa').setView([-34.5429, -58.7128], 11);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(mapa);
+
+  const puntosDeAyuda = [
+    { nombre: "Comisaria de la Mujer - Tres de Febrero", tipo: "comisaria", lat: -34.605, lng: -58.567 },
+    { nombre: "Comisaria de la Mujer - San Martin", tipo: "comisaria", lat: -34.588, lng: -58.520 },
+    { nombre: "Comisaria de la Mujer - San Justo", tipo: "comisaria", lat: -34.676, lng: -58.559 },
+    { nombre: "Comisaria de la Mujer - Morón", tipo: "comisaria", lat: -34.6538, lng: -58.6216 },
+    { nombre: "Comisaria de la Mujer - José León Suárez", tipo: "comisaria", lat: -34.544, lng: -58.579 },
+    { nombre: "Comisaria de la Mujer - Hurlingham", tipo: "comisaria", lat: -34.5992, lng: -58.6286 },
+    { nombre: "Comisaria de la Mujer - Gregorio de Laferrere", tipo: "comisaria", lat: -34.7306, lng: -58.5921 },
+    { nombre: "Comisaria de la Mujer - San Isidro", tipo: "comisaria", lat: -34.4907, lng: -58.5093 },
+    { nombre: "Comisaria de la Mujer - San Fernando", tipo: "comisaria", lat: -34.444, lng: -58.562 },
+    { nombre: "Comisaria de la Mujer - Vicente López", tipo: "comisaria", lat: -34.5156, lng: -58.4978 },
+    { nombre: "Comisaria de la Mujer - Tigre", tipo: "comisaria", lat: -34.4616, lng: -58.6354 },
+    { nombre: "Comisaria de la Mujer - Esteban Echeverria", tipo: "comisaria", lat: -34.81197, lng: -58.46982 },
+    { nombre: "Comisaria de la Mujer - Lomas de Zamora", tipo: "comisaria", lat: -34.768, lng: -58.397 },
+    { nombre: "Comisaria de la Mujer - Florencio Varela", tipo: "comisaria", lat: -34.817, lng: -58.281 },
+    { nombre: "Comisaria de la Mujer - Ituzaingó", tipo: "comisaria", lat: -34.661, lng: -58.673 },
+    { nombre: "Comisaria de la Mujer - Merlo", tipo: "comisaria", lat: -34.6661, lng: -58.7290 },
+    { nombre: "CIM Isabel Calvo", tipo: "cim", lat: -34.62064, lng: -58.36929 },
+    { nombre: "CIM Alicia Moreau", tipo: "cim", lat: -34.59535, lng: -58.39927 },
+    { nombre: "CIM Margarita Malharro", tipo: "cim", lat: -34.60519, lng: -58.41342 },
+    { nombre: "CIM Pepa Gaitán", tipo: "cim", lat: -34.62976, lng: -58.39647 },
+    { nombre: "CIM Florentina Gómez Miranda", tipo: "cim", lat: -34.60557, lng: -58.43277 },
+    { nombre: "CIM Dignxs de Ser", tipo: "cim", lat: -34.62930, lng: -58.45639 },
+    { nombre: "CIM Minerva Mirabal", tipo: "cim", lat: -34.66258, lng: -58.45481 },
+    { nombre: "CIM Carolina Muzzilli", tipo: "cim", lat: -34.62859, lng: -58.48178 },
+    { nombre: "CIM Maria Gallego", tipo: "cim", lat: -34.61310, lng: -58.52419 },
+    { nombre: "CIM Lohana Berkins", tipo: "cim", lat: -34.56053, lng: -58.50029 },
+    { nombre: "CIM Macacha Güemes", tipo: "cim", lat: -34.56619, lng: -58.45051 },
+    { nombre: "Oficina de Violencia Doméstica", tipo: "ovd", lat: -34.60255, lng: -58.38439 },
+    { nombre: "DGVG Sede Central", tipo: "violencia_genero", lat: -34.59094, lng: -58.45231 },
+    { nombre: "DGVG Sede Comuna 1", tipo: "violencia_genero", lat: -34.58415, lng: -58.36956 },
+    { nombre: "DGVG Sede Comuna 4", tipo: "violencia_genero", lat: -34.64182, lng: -58.40280 },
+    { nombre: "DGVG Sede Comuna 6", tipo: "violencia_genero", lat: -34.60569, lng: -58.43277 },
+    { nombre: "DGVG Sede Comuna 8", tipo: "violencia_genero", lat: -34.68616, lng: -58.45480 },
+    { nombre: "Centro de Justicia de la Mujer - La Boca", tipo: "violencia_genero", lat: -34.6337, lng: -58.3568 },
+  ];
+
+  function obtenerColor(tipo) {
+    if (tipo === "comisaria")        return "#9E3869";
+    if (tipo === "cim")              return "#6B4873";
+    if (tipo === "ovd")              return "#552451";
+    if (tipo === "violencia_genero") return "#D8B3D4";
+    return "#888888";
+  }
+
+  puntosDeAyuda.forEach(function(lugar) {
+    const color = obtenerColor(lugar.tipo);
+    L.circleMarker([lugar.lat, lugar.lng], {
+      color: color,
+      fillColor: color,
+      fillOpacity: 0.85,
+      radius: 10
+    }).addTo(mapa).bindPopup(`<strong>${lugar.nombre}</strong>`);
+  });
+}
